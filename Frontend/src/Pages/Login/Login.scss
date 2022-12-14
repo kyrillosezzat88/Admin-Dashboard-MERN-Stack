@@ -1,0 +1,23 @@
+.Login{
+    @apply bg-gray-50 flex justify-center items-center h-screen w-screen;
+    .content{
+        &_inner{
+            @apply flex flex-wrap md:flex-nowrap md:h-[400px] max-w-4xl mx-auto overflow-hidden bg-white rounded-lg shadow-xl;
+            &_image{
+                @apply w-full md:w-1/2 object-cover h-[200px] md:h-auto
+            }
+            &_form{
+                @apply w-full md:w-1/2 p-10;
+                .PageTitle{
+                    @apply text-2xl mb-10
+                }
+                button{
+                    margin: 0 !important;
+                }
+            }
+        }
+        .Filed_Container{
+            @apply mb-4
+        }
+    }
+}

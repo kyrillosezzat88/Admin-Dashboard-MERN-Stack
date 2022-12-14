@@ -1,0 +1,29 @@
+
+aside{
+    @apply w-64 bg-white -left-[300px] absolute md:sticky top-0  h-screen ;
+    div{
+        @apply bg-white  h-screen;
+        li{
+            a{
+                @apply  border-l px-6 py-4  border-l-4 border-white text-gray-500 inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-green-700 hover:no-underline
+            }
+            .active{
+                @apply border-l-4 border-primary text-primary
+            }
+        }
+    }
+    
+}
+.MenuOpened{
+    @apply left-[0px] bg-white absolute z-10;
+    &:before{
+        content:"";
+        background:rgba(.8,.8,.8,.8);
+        position:absolute;
+        z-index:-1;
+        top:0;
+        left:0;
+        width:100vw;
+        height:100vh;
+    }
+}

@@ -1,0 +1,5 @@
+.Orders{
+    &_filter{
+        @apply grid grid-cols-1 md:grid-cols-4 gap-4 items-center bg-white px-3 py-2 rounded-lg border border-gray-200;
+    }
+}

@@ -1,0 +1,9 @@
+.Select_Container{
+    @apply flex justify-between flex-wrap;
+    select{
+        @apply px-2 py-1 h-12 text-sm bg-gray-100  border border-gray-200 rounded-md outline-none focus:bg-white;
+    }
+    .Select_error{
+        @apply border-secondary bg-red-100 placeholder:text-secondary
+    }
+}

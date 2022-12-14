@@ -1,0 +1,20 @@
+.Paginations{
+    @apply flex justify-center md:justify-between p-4 bg-white my-2 flex-wrap;
+    &_Show{
+        @apply flex items-center mb-2 md:mb-0 font-semibold tracking-wide uppercase text-xs;
+    }
+    &_Pages{
+        @apply flex items-center;
+        ul{
+            li{
+                @apply align-bottom inline-flex items-center justify-center cursor-pointer leading-5 transition-colors duration-150 font-medium focus:outline-none px-3 py-1 rounded-md text-xs text-gray-600 dark:text-gray-400 focus:outline-none border border-transparent active:bg-transparent hover:bg-gray-100 focus:ring focus:ring-gray-300 dark:hover:bg-gray-500 dark:hover:text-gray-300 dark:hover:bg-opacity-10;
+            }
+            .active{
+                @apply align-bottom inline-flex items-center justify-center cursor-pointer leading-5 transition-colors duration-150 font-medium focus:outline-none px-3 py-1 rounded-md text-xs text-white bg-green-500 border border-transparent active:bg-green-600 hover:bg-green-600 focus:ring focus:ring-purple-300;
+            }
+        }
+        svg{
+            @apply cursor-pointer;
+        }
+    }
+}

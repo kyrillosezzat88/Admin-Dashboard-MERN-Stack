@@ -1,0 +1,12 @@
+.miniCard{
+    @apply flex items-center p-4 w-full rounded-lg border border-gray-200 bg-white;
+    .icon{
+        @apply rounded-full h-12 w-12 flex justify-center items-center mr-3;
+    }
+    .title{
+        @apply mb-1 text-sm font-medium text-gray-600 dark:text-gray-400;
+    }
+    .count{
+        @apply text-2xl font-bold leading-none text-gray-600 dark:text-gray-200;
+    }
+}

@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+a{
+  @apply text-primary no-underline transition-all;
+}
+a:hover{
+  @apply underline transition-all
+}
+.defaultPage{
+  @apply flex bg-gray-50  min-h-screen h-full;
+}
+.PageTitle{
+  @apply my-6 text-lg font-bold text-gray-700 
+}
+.content{
+  @apply w-full container  px-6 mx-auto
+}

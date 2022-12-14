@@ -1,0 +1,222 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF</title>
+    <style>
+     @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+        body,
+        * {
+            margin: 0;
+            padding:0;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+    .Invoice_content{
+        padding:10px 25px;
+    }
+    .title{
+        font-weight:bold;
+        text-transform:uppercase;
+        font-size: 1.25rem;
+        color: rgb(55,65,81);
+    }
+    .status{
+        font-size: 0.875rem;
+        margin-top:5px;
+        color: rgb(107,114,128);
+        font-weight:bold;
+    }
+    .logo{
+        display:flex;
+        justify-content: space-between ;
+        flex-direction:column;
+        align-content:flex-end;
+        flex-wrap:wrap;
+    }
+    .middle{
+        display:flex;
+        flex-direction:row;
+        justify-content:space-between;
+        margin: 1.5rem 0 ;
+        align-items:flex-start;
+    }
+    .middle > div{
+        display:inline-block;
+        width:32%;
+
+    }
+    .middle_text{
+        font-size: 0.875rem; 
+        line-height: 1.25rem;
+        color: rgb(107,114,128);
+    }
+    .Invoice_Address .title{
+        text-align:right;
+    }
+    .Invoice_Address .user_info{
+        font-size: 0.875rem; 
+        line-height: 1.25rem;
+        color: rgb(107,114,128);
+        display:flex;
+        flex-direction:column;
+        text-align:right;
+    }
+    .TotalPrice{
+        display:flex;
+        justify-content:space-between;
+        margin: 1.5rem 0 ;
+        border-radius:0.5rem;
+        border:1px solid rgb(243,244,246);
+        background:rgb(249,250,251);
+        padding: 1.5rem 2rem;
+    }
+    .TotalPrice_Title{
+        text-transform:uoppercase;
+        font-weight:bold;
+        margin-bottom:5px;
+        color: rgb(75,85,99);
+        font-size: 16px; 
+        line-height: 16px;  
+    }
+    .TotalPrice > div{
+        display:inline-block;
+        width:24%;
+    }
+    @media all and (max-width: 769px) {
+        .GeneralTable{
+            overflow-x: scroll;
+        }
+    }
+    table{
+        width:100%;
+        padding:24px;
+    }
+    table thead{
+        font-size: 12px; 
+        line-height: 16px;  
+        font-weight:600;
+        text-align:left;
+        color:rgb(107,114,128);
+        background:rgb(243,244,246);
+    }
+        table thead th{
+            padding: 12px 16px ;
+            text-align:left;
+
+        }
+        table tbody{
+            background:#fff;
+        }
+        table tbody td{
+            padding: 12px 16px ;
+            text-align:left;
+            font-size: 12px; 
+            line-height: 16px;  
+            text-transform:uoppercase;
+            
+        }
+        .cancel , .pending , .processing , .delivered{
+            padding:4px 10px;
+            font-size: 14px; 
+            line-height: 20px;  
+            border-radius:9999px;
+            color:rgb(220,38,38);
+            background:rgb(254,202,202);
+            font-weight:bold;
+            margin-left:5px;
+            text-transform:uppercase;
+        }
+        .processing{
+            color:rgb(191,219,254);
+            background:rgb(37,99,235);
+        }
+        .pending{
+            color:rgb(254,240,138);
+            background:rgb(202,138,4);
+        }
+        .delivered{
+            color:rgb(187,247,208);
+            background:rgb(22,163,74);
+        }
+</style>
+</head>
+<body>
+    <section>
+     <div class="Invoice_content ">
+        <div >
+            <div style="width:48%; display:inline-block;">
+                <h2 class="title">Invoice</h2>
+                <p class="status">status: <span class={{status}}>{{status}}</span></p>
+            </div>
+            <div class="logo" style="width:48%; display:inline-block; position:relative">
+                <div style="position:absolute;right:0; top:-70px;"><img src={{logo}} alt="E-shop" width='110px' /></div>
+                <p style="margin-top:5px; text-align:right; position:absolute;right:0; top:-10px ">{{shippingAddress}}</p>
+            </div>
+        </div>
+        <div class="middle">
+            <div>
+                <p>Date</p>
+                <span class="middle_text ">{{createdAt|date('D, d-m-Y H:i:s') }}</span>
+            </div>
+            <div>
+                <p>INVOICE NO</p>
+                <span class="middle_text">#{{orderID}}</span>
+            </div>
+            <div class="Invoice_Address">
+                <p class="title" >INVOICE TO.</p>
+                <div class="user_info">
+                    <span>{{user.firstName}} {{user.lastName}}</span><br/>
+                    <span>{{shippingAddress}}</span><br/>
+                    <span>{{city}}</span>
+                </div>
+            </div>
+        </div>
+        <div className="GeneralTable">
+            <table>
+                <thead>
+                    <tr>
+                        <th>SR.</th>
+                        <th>PRODUCT NAME</th>
+                        <th>QUANTITY</th>
+                        <th>ITEM PRICE</th>
+                        <th>TOTAL PRICE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in orderItems %}
+                        <tr>
+                            <td>1</td>
+                            <td>{{item.product.title}}</td>
+                            <td>{{item.quantity}}</td>
+                            <td>{{item.product.salePrice}} EG</td>
+                            <td>{{item.quantity * item.product.salePrice}} EG</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="TotalPrice">
+            <div>
+                <h2 class="TotalPrice_Title">Payment Method</h2>
+                <span class="TotalPrice_subtitle">COD</span>
+            </div>
+            <div>
+                <h2 class="TotalPrice_Title">SHIPPING COST</h2>
+                <span class="TotalPrice_subtitle">40 EG</span>
+            </div>
+            <div>
+                <h2 class="TotalPrice_Title">DISCOUNT</h2>
+                <span class="TotalPrice_subtitle">0 EG</span>
+            </div>
+            <div>
+                <h2 class="TotalPrice_Title">TOTAL PRICE</h2>
+                <span class="TotalPrice_subtitle" style="font-weight:bold; color:#0E9F6E">{{totalPrice}} EG</span>
+            </div>
+        </div>
+    </div>
+    </section>
+</body>
+</html>

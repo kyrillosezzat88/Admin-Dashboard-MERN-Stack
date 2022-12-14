@@ -1,0 +1,9 @@
+.card{
+    @apply flex justify-center items-center flex-col rounded-md p-6 border border-gray-200 text-white;
+    .title{
+        @apply mb-3 text-xl font-medium text-gray-50 dark:text-gray-100 mt-1;
+    }
+    .price{
+        @apply text-3xl font-bold leading-none text-gray-50 dark:text-gray-50;
+    }
+}

@@ -1,0 +1,25 @@
+.Invoice{
+    .cancel {
+        @apply px-2 text-xs leading-5 rounded-full text-red-600 bg-red-200 font-bold py-1;
+      }
+      .processing {
+        @apply px-2 text-xs leading-5 rounded-full text-blue-600 bg-blue-200 font-bold py-1;
+      }
+      .delivered {
+        @apply px-2 text-xs leading-5 rounded-full text-green-600 bg-green-200 font-bold py-1;
+      }
+      .pending {
+        @apply px-2 text-xs leading-5 rounded-full text-yellow-600 bg-yellow-200 font-bold py-1;
+      }
+    &_content{
+        @apply bg-white p-6 shadow-sm rounded-xl
+    }
+    .TotalPrice{
+        &_Title{
+            @apply mb-1 font-bold text-sm uppercase text-gray-600;
+        }
+        &_subtitle{
+            @apply text-sm text-gray-500 font-semibold;
+        }
+    }
+}

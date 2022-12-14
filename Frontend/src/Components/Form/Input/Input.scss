@@ -1,0 +1,16 @@
+.Field{
+    @apply flex justify-between flex-wrap md:flex-none ; 
+    &_title{
+        @apply text-sm text-gray-700;
+    }
+    &_input{
+        @apply placeholder:text-sm px-3 py-1 bg-gray-100 h-12 border border-gray-200 rounded-md outline-none ;
+        &:focus{
+            @apply bg-white;
+        }
+    }
+    &_input_in-error{
+        @apply border-secondary  bg-red-100 placeholder:text-secondary
+    }
+}
+

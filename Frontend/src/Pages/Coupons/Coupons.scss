@@ -1,0 +1,9 @@
+.Coupons{
+    @apply flex bg-gray-50  min-h-screen h-full;
+    &_filter{
+        @apply flex items-center bg-white px-3 py-2 rounded-lg border border-gray-200;
+        .Filed_Container{
+            @apply w-full
+        }
+    }
+}

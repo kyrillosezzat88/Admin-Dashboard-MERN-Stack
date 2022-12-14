@@ -1,0 +1,13 @@
+.Dasboard{
+    @apply flex bg-gray-50  h-screen h-full;
+    .OrdersChart{
+        @apply flex justify-center bg-white min-w-0 p-4 rounded-lg border border-gray-200;   
+    }
+    .TopProductsChart{
+        @apply flex justify-center bg-white min-w-0 p-4 rounded-lg border border-gray-200; 
+        canvas{
+            width: 350px !important;
+            height: 350px !important;
+        }
+    }
+}

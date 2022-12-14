@@ -1,0 +1,27 @@
+.AddTager{
+    @apply  absolute right-0 top-0 left-0 h-full overflow-hidden z-20 bg-black/50  flex justify-end;
+    .content{
+        @apply  bg-white w-full md:w-[50%] relative -right-[100%] mx-0 h-full overflow-y-scroll overflow-x-hidden transition-all duration-500;
+        .PageTitle{
+            @apply mb-1
+        }
+    }
+    .animate_content{
+        @apply right-0 transition-all duration-500
+    }
+    .Filed_Container , .Select_Container{
+        @apply mb-[20px]
+    }
+    .Selected_Images{
+        @apply grid grid-cols-4 gap-4 w-2/3 ml-auto mb-[20px];
+        &_Single{
+            @apply relative;
+            img{
+                @apply w-[100px] h-[100px] object-cover rounded-md border border-gray-400
+            }
+            svg{
+                @apply absolute top-2 right-1 cursor-pointer text-secondary
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+.notification{
+    @apply flex w-full items-center mb-4;
+    &_img{
+        @apply w-[30px] h-[30px]  mr-3 object-cover rounded-full
+    }
+    &_content{
+        @apply flex flex-col w-full ;
+        &_title{
+            @apply font-medium text-gray-500 text-[13px];
+        }
+        &_body{
+            @apply flex text-[11px] items-center;
+            &_status{
+                @apply  px-2 text-xs font-medium leading-5 rounded-full text-red-500 bg-red-100 dark:text-red-100 dark:bg-red-800 mr-2;
+            }
+
+        }
+    }
+}

@@ -1,0 +1,25 @@
+export type ProductProps = {
+    data:{
+        products:{
+            id:number,
+            _id:string,
+            sku:string,
+            title:string,
+            description:string,
+            category:{
+                title:string
+            },
+            mainImage?:string,
+            basePrice:number,
+            salePrice:number,
+            Stock:number,
+            status?:string,
+            discount?:number,
+            published?:Boolean,
+            unit:string
+        }[],
+        TotalRecords:number,
+        TotalPages:number,
+        currentPage:number,
+    }
+}

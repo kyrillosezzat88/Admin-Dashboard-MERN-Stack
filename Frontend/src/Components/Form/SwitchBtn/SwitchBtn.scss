@@ -1,0 +1,9 @@
+.SwitchBtn{
+    @apply inline-flex relative items-center cursor-pointer;
+    &_input{
+        @apply sr-only ;
+    }
+    &_ring{
+        @apply w-11 h-6 bg-grey_light rounded-full  after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white  after:border after:rounded-full after:h-5 after:w-5 after:transition-all  
+    }
+}

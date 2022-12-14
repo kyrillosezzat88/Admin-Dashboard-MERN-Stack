@@ -1,0 +1,38 @@
+.ProductDetails{
+    &_content{
+        @apply flex flex-wrap md:flex-nowrap gap-10  ;
+        &_image{
+            @apply w-full md:w-1/2;
+        }
+        &_desc{
+            @apply w-full md:w-1/2;
+            &_title{
+                @apply capitalize  text-lg md:text-xl lg:text-2xl font-semibold font-serif ;
+            }
+            &_sku{
+                @apply uppercase font-serif font-medium text-gray-500 text-sm;
+                span{
+                    @apply font-bold text-gray-500 dark:text-gray-500
+                }
+            }
+            &_price{
+                @apply font-bold text-2xl mt-6
+            }
+            &_quantity{
+                @apply flex items-center mt-2 ;
+                .status{
+                    @apply py-[2px] px-3 rounded-full font-bold text-xs
+                }
+                .quantity{
+                    @apply text-sm text-gray-500 font-medium pl-4
+                }
+            }
+            &_text{
+                @apply py-4 text-sm leading-6 text-gray-500 dark:text-gray-400 md:leading-7
+            }
+            button{
+                margin-left: 0;
+            }
+        }
+    }
+}

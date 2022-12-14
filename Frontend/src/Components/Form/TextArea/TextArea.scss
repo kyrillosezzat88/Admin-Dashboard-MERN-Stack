@@ -1,0 +1,9 @@
+textarea{
+    @apply px-3 py-1 bg-gray-100 h-12 border border-gray-200 rounded-md outline-none ;
+    &:focus{
+        @apply bg-white
+    }   
+}
+.Field_error{
+    @apply border-secondary bg-red-100 placeholder:text-secondary
+}

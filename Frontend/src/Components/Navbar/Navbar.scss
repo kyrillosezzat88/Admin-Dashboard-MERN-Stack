@@ -1,0 +1,12 @@
+.Navbar{
+    @apply px-6 py-4 w-full bg-white sticky top-0;
+    .ProfileIMG{
+        @apply w-8 h-8 rounded-full ml-4;
+    }
+    .notification_count{
+        @apply relative cursor-pointer;
+        span{
+            @apply bg-secondary text-white p-1 h-5 w-5 text-xs font-medium rounded-full absolute flex justify-center items-center top-0 right-0 -translate-x-1/2 -translate-y-1/2 ;
+        }
+    }
+}

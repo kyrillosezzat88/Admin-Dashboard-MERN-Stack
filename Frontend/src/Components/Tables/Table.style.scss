@@ -1,0 +1,38 @@
+.GeneralTable {
+  @media all and (max-width: 769px) {
+    overflow-x: scroll;
+  }
+  table {
+    @apply w-full p-6;
+    thead {
+      @apply text-xs font-semibold  text-left text-gray-500 uppercase border-b border-gray-200  bg-gray-100;
+      th {
+        @apply px-4 py-3 text-left;
+      }
+    }
+    tbody {
+      @apply bg-white;
+      td {
+        @apply px-4 py-3 text-left text-xs uppercase;
+      }
+      .CustomeTD {
+        @apply md:w-[300px];
+      }
+      svg {
+        @apply text-gray-400 cursor-pointer mr-2 hover:text-primary_dark transition-all;
+      }
+      .cancel {
+        @apply px-2 text-xs leading-5 rounded-full text-red-600 bg-red-200 font-bold py-1;
+      }
+      .processing {
+        @apply px-2 text-xs leading-5 rounded-full text-blue-600 bg-blue-200 font-bold py-1;
+      }
+      .delivered {
+        @apply px-2 text-xs leading-5 rounded-full text-green-600 bg-green-200 font-bold py-1;
+      }
+      .pending {
+        @apply px-2 text-xs leading-5 rounded-full text-yellow-600 bg-yellow-200 font-bold py-1;
+      }
+    }
+  }
+}

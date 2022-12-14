@@ -1,0 +1,6 @@
+.Categories{
+    @apply flex bg-gray-50  min-h-screen h-full;
+    &_filter{
+        @apply grid grid-cols-1 md:grid-cols-3 flex items-center gap-4 bg-white px-3 py-2 rounded-lg border border-gray-200;
+    }
+}

@@ -1,0 +1,28 @@
+.btn{
+    @apply px-4 py-2 m-[20px] rounded-[0.5rem]  transition-all flex justify-center;
+    &:disabled{
+        @apply bg-gray-300 cursor-not-allowed;
+        &:hover{        
+            @apply bg-gray-300 cursor-not-allowed;
+        }
+    }
+}
+.btn-primary{
+    @apply bg-primary text-white;
+    &:hover{
+        @apply bg-primary_dark transition-all 
+    }
+}
+
+.btn-blank{
+    @apply bg-grey text-black
+}
+.btn-secondary{
+    @apply bg-grey text-secondary  transition-all;
+    &:hover{
+        @apply bg-secondary text-white transition-all;
+    }
+}
+.button-font-sm{
+    @apply text-xs
+}

@@ -1,0 +1,15 @@
+.Upload_Container{
+    @apply flex justify-between flex-wrap;
+    .UploadFile{
+        @apply border-2 border-gray-300 border-dashed rounded-md px-6 pt-5 pb-6  cursor-pointer ;
+        svg{
+            @apply text-primary
+        }
+        .title{
+            @apply text-sm mt-2
+        }
+        .subtitle{
+            @apply text-xs text-gray-400
+        }
+    }
+}
