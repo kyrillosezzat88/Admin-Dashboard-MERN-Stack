@@ -9,7 +9,7 @@ interface CommonHeaderProperties extends HeadersDefaults {
   Authorization: string;
 }
 
-axios.defaults.baseURL = 'http://localhost:5000/api/v1'
+axios.defaults.baseURL = 'https://admin-dashboard-backend-nine.vercel.app/api/v1/'
 axios.defaults.headers = {Authorization:`Bearer ${localStorage.getItem('AccessToken') }`} as CommonHeaderProperties
 
 const root = ReactDOM.createRoot(
