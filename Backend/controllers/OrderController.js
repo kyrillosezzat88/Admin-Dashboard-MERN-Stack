@@ -117,9 +117,9 @@ const OrdersReport = async (req , res ) => {
         return res.status(200).json({
             success:true,
             data:{
-                TodayOrders:TodayOrders[0].totalAmount,
-                MonthOrders:MonthOrders[0].totalAmount,
-                TotalOrders:TotalOrders[0].totalAmount
+                TodayOrders:TodayOrders[0] ? TodayOrders[0].totalAmount : 0,
+                MonthOrders:MonthOrders[0] ? MonthOrders[0].totalAmount : 0,
+                TotalOrders:TotalOrders[0] ? TotalOrders[0].totalAmount : 0
             }
         });
     } catch (error) {
