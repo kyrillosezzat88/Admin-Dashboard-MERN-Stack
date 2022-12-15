@@ -1,5 +1,5 @@
 .Paginations{
-    @apply flex justify-center md:justify-between p-4 bg-white my-2 flex-wrap;
+    @apply flex justify-between p-4 bg-white my-2 flex-wrap;
     &_Show{
         @apply flex items-center mb-2 md:mb-0 font-semibold tracking-wide uppercase text-xs;
     }

@@ -16,7 +16,9 @@ function Sidebar({ className }: SidebarProps) {
         authDispatch(LogoutUser());
     }
     const HandleOpenMenu = () => {
-        authDispatch(OpenMenuAction(false))
+        setTimeout(() => {
+            authDispatch(OpenMenuAction(false))
+        },50)
     }
     
     useEffect(() => {
@@ -33,7 +35,7 @@ function Sidebar({ className }: SidebarProps) {
                 <nav>
                     <ul>
                         {items.map(Item => (
-                            <li key={Item.id} >
+                            <li key={Item.id} onClick={HandleOpenMenu}>
                                 <NavLink to={Item.route} >
                                     <Item.icon size={22} className='mr-2' />
                                     {Item.title}

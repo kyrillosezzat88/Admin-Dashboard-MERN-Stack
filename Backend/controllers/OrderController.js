@@ -85,24 +85,35 @@ const OrderDetails = async (req , res) => {
 // get Today orders 
 const OrdersReport = async (req , res ) => {
     try {
+        // caculate total orders 
         const TotalOrders = await OrderModel.aggregate([{
             $group: {
                 _id: null,
                 totalAmount: { $sum: '$totalPrice' },
             }
-        }])
-        const TodayOrders = await OrderModel.aggregate([{
-            $group: {
-                _id: {$dayOfYear: "$createdAt" },
+        }]);
+        // get day of year 
+        let day = (date => {
+            return Math.floor((date - new Date(date.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24)
+         })(new Date());
+        //  caclulate today orders
+        const TodayOrders = await OrderModel.aggregate([
+            {$addFields: {  "dayOfYear" : {$dayOfYear: '$createdAt'}}},
+            {$match: { dayOfYear: day}},
+            { $group: {
+                _id: null,
                 totalAmount: { $sum: '$totalPrice' },
-            }
-        }]).sort({'_id':-1}).limit(1)
-        const MonthOrders = await OrderModel.aggregate([{
-            $group: {
-                _id: { $month: "$createdAt"  },
+            }}
+          ]);
+          // caclulate current month orders
+        const MonthOrders = await OrderModel.aggregate([
+            {$addFields: {  "month" : {$month: '$createdAt'}}},
+            {$match: { month: new Date().getMonth()+1}},
+            { $group: {
+                _id: null,
                 totalAmount: { $sum: '$totalPrice' },
-            }
-        }]).sort({'_id':-1}).limit(1)
+            }}
+          ]);
         return res.status(200).json({
             success:true,
             data:{

@@ -79,7 +79,7 @@ function ProductTable({ data }: ProductProps) {
                         {data.products.map(itm =>
                             <tr>
                                 <td>{itm.sku}</td>
-                                <td className="flex items-center">
+                                <td className="flex items-center flex-wrap md:flex-nowrap">
                                     {itm.mainImage && <img src={itm.mainImage} alt={itm.title} className="object-cover rounded-full border border-gray-300 mr-2 w-[40px] h-[40px]" />}
                                     {itm.title}
                                 </td>
