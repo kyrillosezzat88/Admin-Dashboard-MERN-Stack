@@ -1,41 +1,45 @@
-# Admin Dashbaord MERN Stack 
-##### Admin Dashbaord is a App to Manange  E-commerce Website it`s built in React,Typescript and Node (MERN Stack) 
+# Admin Dashbaord MERN Stack
 
+##### Admin Dashbaord is a App to Manange E-commerce Website it`s built in React,Typescript and Node (MERN Stack)
 
 [![React](https://cdn.iconscout.com/icon/free/png-256/react-2752089-2284906.png)](https://ibb.co/3fW2RyQ)
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
 ## Screenshots
+
 ![Alt text](https://i.ibb.co/bF5jRhy/dashbaord.png "Dashbaord Page")
 ![Alt text](https://i.ibb.co/7bYrHgQ/products.png "Products Page")
 ![Alt text](https://i.ibb.co/42Kkk5X/orders.png "Orders Page")
 
 ## Features
+
 - Authantication login
 - Calcualate Today orders , Month orders , Total Orders , Pendign-processing-delivered orders and draw charts (Dashboard Page)
 - Grap all Products from DB with Pagination , create-edit-delete-view product and Filter products By Name , Category and price (Products Page)
 - Grap all Categories from DB with Pagination , create-edit-delete-view Categories and Filter Categories By Name , Category (Categories page)
 - Grap all Users from DB with Pagination , create-edit-delete-view user and Filter Users By Email (Users page)
-- Grap all Orders from DB  with Pagination , create-edit-delete-view Order and Filter Orders By Order ID and Status and Print and Download Orders  (Orders page)
+- Grap all Orders from DB with Pagination , create-edit-delete-view Order and Filter Orders By Order ID and Status and Print and Download Orders (Orders page)
 - and More more .....
 
 ## Apis
+
 - Authantication login and sign up
 - Total Orders , Month orders , Today orders Api (Dashboard Api)
 - Create/Update/Delete/read/Filter By Name ,category and Price (Products Page Apis)
-- Create/Update/Delete/read/Filter By Name , Category  (Category Page Apis)
-- Create/Update/Delete/read/Filter By Email  (Users Page Apis)
-- Create/Update/Delete/read/Filter By Order Id and Status  (Orders Page Apis)
+- Create/Update/Delete/read/Filter By Name , Category (Category Page Apis)
+- Create/Update/Delete/read/Filter By Email (Users Page Apis)
+- Create/Update/Delete/read/Filter By Order Id and Status (Orders Page Apis)
 
-## Middlewares 
+## Middlewares
+
 - Admin and user Rules
 - Pagination
 - Upload (for upload images using multer)
-- Validations 
-
+- Validations
 
 ## Frontend Tech
+
 - [ReactJS and React Hooks](https://reactjs.org/)
 - [Typescript](https://www.typescriptlang.org/)
 - [Axios](https://axios-http.com/docs/intro)
@@ -47,6 +51,7 @@
 - [React-toastify](https://www.npmjs.com/package/react-toastify)
 
 ## Backend Teck
+
 - [Nodejs](https://nodejs.org/en/)
 - [Express-js](https://expressjs.com/)
 - [Mongoose](https://mongoosejs.com/)
@@ -62,6 +67,7 @@
 - [csv-writer](https://www.npmjs.com/package/csv-writer)
 
 ## Folder Structure Frontend
+
 ```bash
 └── Admin-Dashboard/
     ├── build/
@@ -137,7 +143,49 @@
             ├── HandleAxiosError.tsx
             └── utils.tsx
 ```
-## Installation
+
+## Folder Structure Backend
+
+```bash
+└── Admin-Dashboard-Backend/
+    ├── controllers/
+    │    ├── AuthController.js
+    │    ├── Category.js
+    │    ├── OrderController.js
+    │    ├── PdfController.js
+    │    ├── ProductController.js
+    │    └── userController.js
+    ├── helpers/
+    │    ├── ImageUploadConfig.js
+    │    └── ImageUploadMethod.js
+    ├── middlewares/
+    │    ├── Validatiopns/
+    │    ├── AdminJwt.js
+    │    ├── Pagination.js
+    │    ├── Upload.js
+    │    └── userJwt.js
+    ├── models/
+    │    ├── category.js
+    │    ├── order.js
+    │    ├── orderItem.js
+    │    ├── product.js
+    │    └── user.js
+    ├── pdf/
+    ├── public/
+    ├── routes/
+    │    ├── Auth.js
+    │    ├── category.js
+    │    ├── csv.js
+    │    ├── order.js
+    │    ├── pdf.js
+    │    ├── product.js
+    │    └── user.js
+    ├── Templates/
+    │    └── Invoice.html.twig
+    └── app.js
+```
+
+## Installation-Frontend
 
 Admin-Dashboard requires [Node.js](https://nodejs.org/) to run.
 
@@ -152,7 +200,30 @@ npm start
 For Generate Build folder:
 
 ```sh
-npm run build 
+npm run build
+```
+
+## Installation-Backend
+
+1-requires [Node.js](https://nodejs.org/) to run.
+2-Create .env file in route dir and add
+
+```bash
+PORT= yout Port
+SECRET_KEY= your secret key
+MONGODB_URI= your Mongodb url
+CLOUDINARY_CLOUD_NAME= your cloudinary name
+CLOUDINARY_API_KEY= your cloudinary Api Key
+CLOUDINARY_API_SECRET= your cloudinary Api Secret Key
+
+```
+
+3-Install the dependencies and devDependencies and start the server.
+
+```sh
+cd server-app-folder
+npm install
+npm start
 ```
 
 ## License
