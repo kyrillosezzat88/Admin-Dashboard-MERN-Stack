@@ -10,7 +10,7 @@ import './Invoice.scss';
 import InvoiceTable from "../../Components/Tables/InvoiceTable/InvoiceTable";
 import Spinner from "../../Components/Spinner/Spinner";
 import ReactToPrint from 'react-to-print';
-import {FiDownloadCloud , FiPrinter} from 'react-icons/fi'
+import { FiDownloadCloud, FiPrinter } from 'react-icons/fi'
 const Invoice = () => {
     const { authDispatch }: any = useDashboard()
     const { id } = useParams()
@@ -23,7 +23,7 @@ const Invoice = () => {
                 console.log(res.data.data)
             }).catch(err => HandleAxiosError(err, authDispatch))
         })();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     return (
         <section className="defaultPage Invoice">
@@ -85,15 +85,16 @@ const Invoice = () => {
                             </div>
                         </div>
                         <div className="flex justify-between flex-wrap md:flex-nowrap">
-                            <a className="btn btn-primary items-center w-full md:w-1/2 " href={`http://localhost:5000/api/v1/invoice/pdf/${OrderDetails._id}`}>
+                            <a className="btn btn-primary items-center w-full md:w-1/2 " href={`https://admin-dashboard-backend-nine.vercel.app/api/v1/invoice/pdf/${OrderDetails._id}`}>
                                 <FiDownloadCloud />
                                 <span className="ml-2">Download Invoice</span>
                             </a>
                             <ReactToPrint
-                                trigger={() => { return <button className="btn btn-primary items-center w-full md:w-1/2">
-                                    <FiPrinter />
-                                    <span className="ml-2">Print Invoice</span>
-                                </button>
+                                trigger={() => {
+                                    return <button className="btn btn-primary items-center w-full md:w-1/2">
+                                        <FiPrinter />
+                                        <span className="ml-2">Print Invoice</span>
+                                    </button>
                                 }}
                                 content={() => PrintRef.current}
                                 documentTitle={`Invoice-${OrderDetails.orderID}`}
