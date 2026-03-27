@@ -124,13 +124,13 @@ function AddProduct({
                                     "gallery",
                                     values.gallery.filter(
                                       (img: string | File, indx: number) =>
-                                        indx !== index
-                                    )
+                                        indx !== index,
+                                    ),
                                   )
                                 }
                               />
                             </div>
-                          )
+                          ),
                         )}
                     </div>
                   </>
