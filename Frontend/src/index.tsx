@@ -9,17 +9,17 @@ interface CommonHeaderProperties extends HeadersDefaults {
   Authorization: string;
 }
 
-axios.defaults.baseURL = "http://localhost:5000/api/v1";
+axios.defaults.baseURL = "https://admin-backend-orcin.vercel.app/api/v1";
 axios.defaults.headers = {
   Authorization: `Bearer ${localStorage.getItem("AccessToken")}`,
 } as CommonHeaderProperties;
 
 const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement
+  document.getElementById("root") as HTMLElement,
 );
 root.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>
+  </React.StrictMode>,
 );
 reportWebVitals();
